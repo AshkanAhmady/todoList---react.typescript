@@ -1,9 +1,9 @@
 import { useRef } from "react";
-import { SetDataProps } from "../Interfaces";
+import { NewTodoProps } from "../Interfaces";
 
 
 
-const NewTodo: React.FC<SetDataProps> = (props) => {
+const NewTodo: React.FC<NewTodoProps> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const submitHandler = (e: React.FormEvent) => {

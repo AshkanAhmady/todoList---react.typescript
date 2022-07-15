@@ -10,13 +10,23 @@ const App: React.FC = () => {
 
   const addTodoHandler = (text: string) => {
     setTodos([...todos, {id: Date.now(), text:text}]);
-    console.log(todos)
+    // (anodther wat)
+    // setTodos(prevTodos => [...prevTodos, {id: Date.now(), text:text}]);
+  }
+
+  const deleteTodoHandler = (todoId: number) => {
+    const updatedTodos = todos.filter((item) => item.id !== todoId)
+    setTodos(updatedTodos);
+    // (anodther wat)
+    // setTodos(prevTodos => {
+    //   return prevTodos.filter((todo) => todo.id !== todoId)
+    // })
   }
 
   return (
     <div className="App">
       <NewTodo onAddTodo={addTodoHandler}/>
-      <TodoList  todos={todos}/>
+      <TodoList onDelete={deleteTodoHandler}  todos={todos}/>
     </div>
   );
 }

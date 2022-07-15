@@ -11,7 +11,8 @@ export interface Todo {
 
 
 export interface TodoListProps {
-    todos: {id: number, text: string}[]
+    todos: Todo[];
+    onDelete: (id: number) => void
 }
 // ##########
 // ##########
@@ -25,7 +26,7 @@ export interface TodoListProps {
 //     onAddTodo: (text: string) => void 
 // }
 // (((((( or we can use type ))))))
-export type SetDataProps = {
+export type NewTodoProps = {
     onAddTodo: (text: string) => void 
 }
 // ##########
