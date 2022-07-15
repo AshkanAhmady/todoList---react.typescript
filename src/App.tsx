@@ -1,24 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import TodoList from "./Components/TodoList";
 
-function App() {
+// this (FC=> FunctionComponent) type, provided by the React
+const App: React.FC = () => {
+  let todos = [
+    {id: 1, text: "do homework"},
+    {id: 2, text: "go to gym"},
+    {id: 3, text: "wash the car"}
+  ]
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <TodoList todos={todos}/>
     </div>
   );
 }
