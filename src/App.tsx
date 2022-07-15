@@ -1,3 +1,4 @@
+import NewTodo from "./Components/NewTodo";
 import TodoList from "./Components/TodoList";
 
 // this (FC=> FunctionComponent) type, provided by the React
@@ -9,6 +10,7 @@ const App: React.FC = () => {
   ]
   return (
     <div className="App">
+      <NewTodo/>
       <TodoList todos={todos}/>
     </div>
   );
