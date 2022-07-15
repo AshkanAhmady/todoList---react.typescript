@@ -1,6 +1,4 @@
-interface TodoListProps {
-    todos: {id: number, text: string}[]
-}
+import { TodoListProps } from "../Interfaces";
 
 // if we use props, we should define exactully type of props
 const TodoList: React.FC<TodoListProps> = (props) => {

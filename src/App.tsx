@@ -1,16 +1,16 @@
+import { useState } from "react";
 import NewTodo from "./Components/NewTodo";
 import TodoList from "./Components/TodoList";
+import { Todo } from "./Interfaces";
 
 // this (FC=> FunctionComponent) type, provided by the React
 const App: React.FC = () => {
-  let todos = [
-    {id: 1, text: "do homework"},
-    {id: 2, text: "go to gym"},
-    {id: 3, text: "wash the car"}
-  ]
+  // <Todo[]> :=> the genericc tye that show how to array of todos object must to be
+  const [todos, setTodos] = useState<Todo[]>([])
 
   const addTodoHandler = (text: string) => {
-    console.log(text)
+    setTodos([...todos, {id: Date.now(), text:text}]);
+    console.log(todos)
   }
 
   return (

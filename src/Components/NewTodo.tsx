@@ -1,12 +1,7 @@
 import { useRef } from "react";
+import { SetDataProps } from "../Interfaces";
 
-// interface SetDataProps {
-//     onAddTodo: (text: string) => void 
-// }
-// (((((( or we can use type ))))))
-type SetDataProps = {
-    onAddTodo: (text: string) => void 
-}
+
 
 const NewTodo: React.FC<SetDataProps> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null)
