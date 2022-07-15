@@ -1,11 +1,19 @@
 import { useRef } from "react";
 
-const NewTodo: React.FC = () => {
+// interface SetDataProps {
+//     onAddTodo: (text: string) => void 
+// }
+// (((((( or we can use type ))))))
+type SetDataProps = {
+    onAddTodo: (text: string) => void 
+}
+
+const NewTodo: React.FC<SetDataProps> = (props) => {
     const inputRef = useRef<HTMLInputElement>(null)
 
     const submitHandler = (e: React.FormEvent) => {
         e.preventDefault();
-        console.log(inputRef.current!.value)
+        props.onAddTodo(inputRef.current!.value)
     }
 
     return (
